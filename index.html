@@ -5,105 +5,250 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MPK Kraków Urbanmove</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="light-theme">
     <!-- Pasek nawigacji -->
     <nav class="navbar">
-        <div class="logo">
-            <span class="logo-text">MPK Kraków Urbanmove</span>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-bus"></i>
+                <span class="logo-text">MPK Kraków <span class="logo-accent">Urbanmove</span></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#mapa" class="nav-link active"><i class="fas fa-map-marked-alt"></i> Mapa</a></li>
+                <li><a href="#pojazdy" class="nav-link"><i class="fas fa-bus"></i> Pojazdy</a></li>
+                <li><a href="#linie" class="nav-link"><i class="fas fa-route"></i> Linie</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-        <ul class="nav-menu">
-            <li><a href="#mapa" class="nav-link">🗺️ Mapa</a></li>
-            <li><a href="#pojazdy" class="nav-link">🚌 Pojazdy</a></li>
-            <li><a href="#linie" class="nav-link">📊 Linie</a></li>
-            <li><a href="#dodaj" class="nav-link">➕ Dodaj</a></li>
-        </ul>
     </nav>
 
     <!-- Główna treść -->
     <main class="container">
         <!-- Sekcja Mapa -->
         <section id="mapa" class="section active">
-            <h2>🗺️ Mapa połączeń</h2>
+            <div class="section-header">
+                <h2><i class="fas fa-map-marked-alt"></i> Mapa połączeń Kraków</h2>
+                <div class="header-actions">
+                    <span class="badge">Sieć miejska</span>
+                </div>
+            </div>
+            
             <div class="map-container">
                 <div class="map-placeholder">
-                    <p>Tutaj będzie mapa</p>
-                    <small>Wypełnij tę sekcję swoją treścią</small>
+                    <i class="fas fa-map"></i>
+                    <h3>Plan sieci komunikacyjnej</h3>
+                    <p>Tutaj możesz dodać interaktywną mapę Krakowa</p>
+                    <div class="map-overlay">
+                        <div class="map-legend">
+                            <span><i class="fas fa-circle" style="color: #0055a5;"></i> Tramwaje</span>
+                            <span><i class="fas fa-circle" style="color: #e30613;"></i> Autobusy</span>
+                            <span><i class="fas fa-circle" style="color: #00a651;"></i> Linie nocne</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-cards">
+                <div class="info-card">
+                    <i class="fas fa-subway"></i>
+                    <div>
+                        <h4>Linie tramwajowe</h4>
+                        <p class="stats">25 linii</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-bus"></i>
+                    <div>
+                        <h4>Linie autobusowe</h4>
+                        <p class="stats">98 linii</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Linie nocne</h4>
+                        <p class="stats">16 linii</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Sekcja Pojazdy -->
         <section id="pojazdy" class="section">
-            <h2>🚌 Nasze pojazdy</h2>
-            <div class="vehicles-grid">
-                <!-- Tu będziesz dodawać pojazdy -->
-                <div class="vehicle-card">
-                    <h3>Autobus 101</h3>
-                    <p>Typ: Solaris Urbino</p>
-                    <p>Rok: 2020</p>
-                    <p>Status: 🟢 W trasie</p>
+            <div class="section-header">
+                <h2><i class="fas fa-bus"></i> Tabor MPK Kraków</h2>
+                <button class="btn-add" onclick="showAddForm('vehicle')">
+                    <i class="fas fa-plus"></i> Dodaj pojazd
+                </button>
+            </div>
+
+            <div class="vehicles-grid" id="vehiclesGrid">
+                <!-- Przykładowe pojazdy -->
+                <div class="vehicle-card" data-id="1">
+                    <div class="vehicle-image">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>Autobus 101</h3>
+                        <p><i class="fas fa-tag"></i> Solaris Urbino 18</p>
+                        <p><i class="fas fa-calendar"></i> Rok: 2022</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Linia: 139</p>
+                        <span class="status-badge status-trasie">W trasie</span>
+                    </div>
                 </div>
-                <div class="vehicle-card">
-                    <h3>Tramwaj 205</h3>
-                    <p>Typ: Pesa Swing</p>
-                    <p>Rok: 2019</p>
-                    <p>Status: 🟡 Postój</p>
+
+                <div class="vehicle-card" data-id="2">
+                    <div class="vehicle-image">
+                        <i class="fas fa-tram"></i>
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>Tramwaj 205</h3>
+                        <p><i class="fas fa-tag"></i> Pesa Krakowiak</p>
+                        <p><i class="fas fa-calendar"></i> Rok: 2020</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Linia: 50</p>
+                        <span class="status-badge status-postoj">Na postoju</span>
+                    </div>
                 </div>
-                <div class="vehicle-card">
-                    <h3>Autobus 107</h3>
-                    <p>Typ: Mercedes Conecto</p>
-                    <p>Rok: 2022</p>
-                    <p>Status: 🔴 Serwis</p>
+
+                <div class="vehicle-card" data-id="3">
+                    <div class="vehicle-image">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>Autobus 107</h3>
+                        <p><i class="fas fa-tag"></i> Mercedes Conecto</p>
+                        <p><i class="fas fa-calendar"></i> Rok: 2021</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Linia: 152</p>
+                        <span class="status-badge status-serbwis">Serwis</span>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Formularz do dodawania pojazdów -->
-            <div class="add-form">
-                <h3>Dodaj nowy pojazd</h3>
-                <input type="text" id="nazwa" placeholder="Nazwa pojazdu">
-                <input type="text" id="typ" placeholder="Typ">
-                <input type="number" id="rok" placeholder="Rok">
-                <select id="status">
-                    <option value="W trasie">W trasie</option>
-                    <option value="Postój">Postój</option>
-                    <option value="Serwis">Serwis</option>
-                </select>
-                <button onclick="dodajPojazd()">Dodaj pojazd</button>
+
+            <!-- Formularz dodawania pojazdu (ukryty domyślnie) -->
+            <div id="vehicleForm" class="add-form hidden">
+                <h3><i class="fas fa-plus-circle"></i> Nowy pojazd</h3>
+                <div class="form-grid">
+                    <input type="text" id="vehicleName" placeholder="Nazwa pojazdu" value="Autobus ">
+                    <input type="text" id="vehicleModel" placeholder="Model (np. Solaris)">
+                    <input type="number" id="vehicleYear" placeholder="Rok produkcji">
+                    <input type="text" id="vehicleLine" placeholder="Linia (np. 139)">
+                    <select id="vehicleStatusSelect">
+                        <option value="W trasie">W trasie</option>
+                        <option value="Na postoju">Na postoju</option>
+                        <option value="Serwis">W serwisie</option>
+                    </select>
+                    <select id="vehicleType">
+                        <option value="bus">Autobus</option>
+                        <option value="tram">Tramwaj</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button onclick="addVehicle()" class="btn-save"><i class="fas fa-save"></i> Zapisz</button>
+                    <button onclick="hideAddForm('vehicle')" class="btn-cancel"><i class="fas fa-times"></i> Anuluj</button>
+                </div>
             </div>
         </section>
 
         <!-- Sekcja Linie -->
         <section id="linie" class="section">
-            <h2>📊 Linie komunikacyjne</h2>
-            <div class="lines-list">
-                <div class="line-item">
-                    <span class="line-number">101</span>
-                    <span class="line-route">Dworzec - Osiedle</span>
-                    <span class="line-frequency">Co 15 min</span>
+            <div class="section-header">
+                <h2><i class="fas fa-route"></i> Rozkład jazdy</h2>
+                <button class="btn-add" onclick="showAddForm('line')">
+                    <i class="fas fa-plus"></i> Dodaj linię
+                </button>
+            </div>
+
+            <div class="lines-container" id="linesList">
+                <!-- Przykładowe linie -->
+                <div class="line-card" data-id="1">
+                    <div class="line-header">
+                        <span class="line-number" style="background: #0055a5;">139</span>
+                        <span class="line-type">
+                            <i class="fas fa-bus"></i> Autobus
+                        </span>
+                    </div>
+                    <div class="line-route">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Dworzec Główny - Osiedle Piastów</span>
+                    </div>
+                    <div class="line-schedule">
+                        <span><i class="fas fa-clock"></i> Co 15 min</span>
+                        <span class="line-status active">Aktywna</span>
+                    </div>
                 </div>
-                <div class="line-item">
-                    <span class="line-number">102</span>
-                    <span class="line-route">Centrum - Szpital</span>
-                    <span class="line-frequency">Co 20 min</span>
+
+                <div class="line-card" data-id="2">
+                    <div class="line-header">
+                        <span class="line-number" style="background: #e30613;">152</span>
+                        <span class="line-type">
+                            <i class="fas fa-bus"></i> Autobus
+                        </span>
+                    </div>
+                    <div class="line-route">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Nowy Bieżanów - Bronowice</span>
+                    </div>
+                    <div class="line-schedule">
+                        <span><i class="fas fa-clock"></i> Co 20 min</span>
+                        <span class="line-status active">Aktywna</span>
+                    </div>
                 </div>
-                <div class="line-item">
-                    <span class="line-number">103</span>
-                    <span class="line-route">Rynek - Lotnisko</span>
-                    <span class="line-frequency">Co 30 min</span>
+
+                <div class="line-card" data-id="3">
+                    <div class="line-header">
+                        <span class="line-number" style="background: #00a651;">50</span>
+                        <span class="line-type">
+                            <i class="fas fa-tram"></i> Tramwaj
+                        </span>
+                    </div>
+                    <div class="line-route">
+                        <i class="fas fa-arrow-right"></i>
+                        <span>Mały Płaszów - Krowodrza</span>
+                    </div>
+                    <div class="line-schedule">
+                        <span><i class="fas fa-clock"></i> Co 10 min</span>
+                        <span class="line-status active">Aktywna</span>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Formularz do dodawania linii -->
-            <div class="add-form">
-                <h3>Dodaj nową linię</h3>
-                <input type="text" id="linia_numer" placeholder="Numer linii">
-                <input type="text" id="linia_trasa" placeholder="Trasa">
-                <input type="text" id="linia_czestotliwosc" placeholder="Częstotliwość">
-                <button onclick="dodajLinie()">Dodaj linię</button>
+
+            <!-- Formularz dodawania linii (ukryty domyślnie) -->
+            <div id="lineForm" class="add-form hidden">
+                <h3><i class="fas fa-plus-circle"></i> Nowa linia</h3>
+                <div class="form-grid">
+                    <input type="text" id="lineNumber" placeholder="Numer linii">
+                    <select id="lineType">
+                        <option value="bus">Autobus</option>
+                        <option value="tram">Tramwaj</option>
+                    </select>
+                    <input type="text" id="lineRoute" placeholder="Trasa (np. Dworzec - Osiedle)">
+                    <input type="text" id="lineFrequency" placeholder="Częstotliwość (np. co 15 min)">
+                </div>
+                <div class="form-actions">
+                    <button onclick="addLine()" class="btn-save"><i class="fas fa-save"></i> Zapisz</button>
+                    <button onclick="hideAddForm('line')" class="btn-cancel"><i class="fas fa-times"></i> Anuluj</button>
+                </div>
             </div>
         </section>
     </main>
+
+    <!-- Przycisk powrotu na górę -->
+    <button id="scrollTop" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
