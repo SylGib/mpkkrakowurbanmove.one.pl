@@ -1,7 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPK Kraków Urbanmove</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<h1> siema
-</h1>
+    <!-- Pasek nawigacji -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-text">MPK Kraków Urbanmove</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#mapa" class="nav-link">🗺️ Mapa</a></li>
+            <li><a href="#pojazdy" class="nav-link">🚌 Pojazdy</a></li>
+            <li><a href="#linie" class="nav-link">📊 Linie</a></li>
+            <li><a href="#dodaj" class="nav-link">➕ Dodaj</a></li>
+        </ul>
+    </nav>
+
+    <!-- Główna treść -->
+    <main class="container">
+        <!-- Sekcja Mapa -->
+        <section id="mapa" class="section active">
+            <h2>🗺️ Mapa połączeń</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <p>Tutaj będzie mapa</p>
+                    <small>Wypełnij tę sekcję swoją treścią</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sekcja Pojazdy -->
+        <section id="pojazdy" class="section">
+            <h2>🚌 Nasze pojazdy</h2>
+            <div class="vehicles-grid">
+                <!-- Tu będziesz dodawać pojazdy -->
+                <div class="vehicle-card">
+                    <h3>Autobus 101</h3>
+                    <p>Typ: Solaris Urbino</p>
+                    <p>Rok: 2020</p>
+                    <p>Status: 🟢 W trasie</p>
+                </div>
+                <div class="vehicle-card">
+                    <h3>Tramwaj 205</h3>
+                    <p>Typ: Pesa Swing</p>
+                    <p>Rok: 2019</p>
+                    <p>Status: 🟡 Postój</p>
+                </div>
+                <div class="vehicle-card">
+                    <h3>Autobus 107</h3>
+                    <p>Typ: Mercedes Conecto</p>
+                    <p>Rok: 2022</p>
+                    <p>Status: 🔴 Serwis</p>
+                </div>
+            </div>
+            
+            <!-- Formularz do dodawania pojazdów -->
+            <div class="add-form">
+                <h3>Dodaj nowy pojazd</h3>
+                <input type="text" id="nazwa" placeholder="Nazwa pojazdu">
+                <input type="text" id="typ" placeholder="Typ">
+                <input type="number" id="rok" placeholder="Rok">
+                <select id="status">
+                    <option value="W trasie">W trasie</option>
+                    <option value="Postój">Postój</option>
+                    <option value="Serwis">Serwis</option>
+                </select>
+                <button onclick="dodajPojazd()">Dodaj pojazd</button>
+            </div>
+        </section>
+
+        <!-- Sekcja Linie -->
+        <section id="linie" class="section">
+            <h2>📊 Linie komunikacyjne</h2>
+            <div class="lines-list">
+                <div class="line-item">
+                    <span class="line-number">101</span>
+                    <span class="line-route">Dworzec - Osiedle</span>
+                    <span class="line-frequency">Co 15 min</span>
+                </div>
+                <div class="line-item">
+                    <span class="line-number">102</span>
+                    <span class="line-route">Centrum - Szpital</span>
+                    <span class="line-frequency">Co 20 min</span>
+                </div>
+                <div class="line-item">
+                    <span class="line-number">103</span>
+                    <span class="line-route">Rynek - Lotnisko</span>
+                    <span class="line-frequency">Co 30 min</span>
+                </div>
+            </div>
+            
+            <!-- Formularz do dodawania linii -->
+            <div class="add-form">
+                <h3>Dodaj nową linię</h3>
+                <input type="text" id="linia_numer" placeholder="Numer linii">
+                <input type="text" id="linia_trasa" placeholder="Trasa">
+                <input type="text" id="linia_czestotliwosc" placeholder="Częstotliwość">
+                <button onclick="dodajLinie()">Dodaj linię</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
