@@ -18,7 +18,6 @@
     --shadow: 0 4px 20px rgba(0,0,0,0.08);
     --nav-bg: #ffffff;
     --hover-bg: #f1f3f5;
-    --icon-color: #0055a5;
     --input-bg: #ffffff;
     --input-border: #dee2e6;
 }
@@ -36,7 +35,6 @@ body.dark-theme {
     --shadow: 0 4px 20px rgba(0,0,0,0.3);
     --nav-bg: #2c3e50;
     --hover-bg: #34495e;
-    --icon-color: #3498db;
     --input-bg: #34495e;
     --input-border: #4a5568;
 }
@@ -57,8 +55,6 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px);
-    background: rgba(var(--nav-bg-rgb), 0.95);
 }
 
 .nav-container {
@@ -187,12 +183,7 @@ body.dark-theme .theme-btn .fa-sun {
 }
 
 .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 2rem;
-    flex-wrap: wrap;
-    gap: 1rem;
 }
 
 .section-header h2 {
@@ -206,21 +197,12 @@ body.dark-theme .theme-btn .fa-sun {
     color: var(--accent-primary);
 }
 
-.badge {
-    background: var(--accent-primary);
-    color: white;
-    padding: 0.3rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-}
-
 /* Mapa */
 .map-container {
     background: var(--card-bg);
     border-radius: 15px;
     overflow: hidden;
     box-shadow: var(--shadow);
-    margin-bottom: 2rem;
 }
 
 .map-placeholder {
@@ -230,7 +212,6 @@ body.dark-theme .theme-btn .fa-sun {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
     color: var(--text-secondary);
 }
 
@@ -240,71 +221,20 @@ body.dark-theme .theme-btn .fa-sun {
     margin-bottom: 1rem;
 }
 
-.map-overlay {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-}
-
-.map-legend {
-    background: var(--card-bg);
-    padding: 1rem;
-    border-radius: 10px;
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    box-shadow: var(--shadow);
-}
-
-/* Info cards */
-.info-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.info-card {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    transition: transform 0.3s;
-}
-
-.info-card:hover {
-    transform: translateY(-5px);
-}
-
-.info-card i {
-    font-size: 2rem;
-    color: var(--accent-primary);
-}
-
-.stats {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--accent-primary);
-}
-
 /* Grid pojazdów */
 .vehicles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 1.5rem;
-    margin-bottom: 2rem;
 }
 
 .vehicle-card {
     background: var(--card-bg);
     border-radius: 12px;
-    overflow: hidden;
+    padding: 1.5rem;
     box-shadow: var(--shadow);
     display: flex;
+    gap: 1.5rem;
     transition: transform 0.3s;
 }
 
@@ -312,206 +242,80 @@ body.dark-theme .theme-btn .fa-sun {
     transform: translateY(-5px);
 }
 
-.vehicle-image {
-    width: 100px;
+.vehicle-icon {
+    width: 60px;
+    height: 60px;
     background: var(--accent-primary);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.vehicle-image i {
-    font-size: 3rem;
+.vehicle-icon i {
+    font-size: 2rem;
     color: white;
 }
 
-.vehicle-info {
+.vehicle-details {
     flex: 1;
-    padding: 1rem;
 }
 
-.vehicle-info h3 {
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-}
-
-.vehicle-info p {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin: 0.2rem 0;
-}
-
-.vehicle-info p i {
-    width: 20px;
-    color: var(--accent-primary);
-}
-
-.status-badge {
-    display: inline-block;
-    padding: 0.2rem 1rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    margin-top: 0.5rem;
-}
-
-.status-trasie {
-    background: #d4edda;
-    color: #155724;
-}
-
-.status-postoj {
-    background: #fff3cd;
-    color: #856404;
-}
-
-.status-serbwis {
-    background: #f8d7da;
-    color: #721c24;
-}
-
-/* Linie */
-.lines-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 1.5rem;
-}
-
-.line-card {
-    background: var(--card-bg);
-    border-radius: 12px;
-    padding: 1.2rem;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s;
-}
-
-.line-card:hover {
-    transform: translateY(-5px);
-}
-
-.line-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.vehicle-details h3 {
     margin-bottom: 1rem;
-}
-
-.line-number {
-    padding: 0.3rem 1rem;
-    border-radius: 20px;
-    color: white;
-    font-weight: 600;
+    color: var(--accent-primary);
     font-size: 1.2rem;
 }
 
-.line-type {
+.vehicle-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.vehicle-table td {
+    padding: 0.3rem 0;
     color: var(--text-secondary);
 }
 
-.line-route {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 1rem;
+.vehicle-table td:first-child {
+    font-weight: 500;
+    width: 40%;
     color: var(--text-primary);
 }
 
-.line-route i {
-    color: var(--accent-primary);
-}
-
-.line-schedule {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.vehicle-table td:last-child {
     color: var(--text-secondary);
-    font-size: 0.9rem;
 }
 
-.line-status {
-    padding: 0.2rem 1rem;
-    border-radius: 15px;
-    background: #d4edda;
-    color: #155724;
+.vehicle-table strong {
+    color: var(--accent-primary);
+    font-size: 1.1rem;
 }
 
-/* Formularze */
-.btn-add {
-    background: var(--accent-primary);
-    color: white;
-    border: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
+/* Grid linii - jak tagi */
+.lines-grid {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 500;
-    transition: opacity 0.3s;
-}
-
-.btn-add:hover {
-    opacity: 0.9;
-}
-
-.add-form {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    padding: 1rem;
     background: var(--card-bg);
-    border-radius: 12px;
-    padding: 2rem;
-    margin-top: 2rem;
+    border-radius: 15px;
     box-shadow: var(--shadow);
 }
 
-.add-form.hidden {
-    display: none;
-}
-
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    margin: 1.5rem 0;
-}
-
-.add-form input,
-.add-form select {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid var(--input-border);
-    border-radius: 6px;
-    background: var(--input-bg);
-    color: var(--text-primary);
-    font-size: 0.95rem;
-}
-
-.form-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: flex-end;
-}
-
-.btn-save {
-    background: #28a745;
+.line-pill {
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
     color: white;
-    border: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.btn-cancel {
-    background: #dc3545;
-    color: white;
-    border: none;
-    padding: 0.7rem 1.5rem;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.line-pill:hover {
+    transform: scale(1.1);
+    cursor: default;
 }
 
 /* Przycisk powrotu na górę */
@@ -574,27 +378,21 @@ body.dark-theme .theme-btn .fa-sun {
         margin-top: 70px;
     }
 
-    .info-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .map-legend {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: flex-start;
-    }
-
-    .vehicles-grid,
-    .lines-container {
+    .vehicles-grid {
         grid-template-columns: 1fr;
     }
 
     .vehicle-card {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    .vehicle-image {
-        width: 100%;
-        height: 80px;
+    .vehicle-table td:first-child {
+        width: 30%;
+    }
+
+    .lines-grid {
+        justify-content: center;
     }
 }
