@@ -41,206 +41,405 @@
         <section id="mapa" class="section active">
             <div class="section-header">
                 <h2><i class="fas fa-map-marked-alt"></i> Mapa połączeń Kraków</h2>
-                <div class="header-actions">
-                    <span class="badge">Sieć miejska</span>
-                </div>
             </div>
             
             <div class="map-container">
                 <div class="map-placeholder">
                     <i class="fas fa-map"></i>
                     <h3>Plan sieci komunikacyjnej</h3>
-                    <p>Tutaj możesz dodać interaktywną mapę Krakowa</p>
-                    <div class="map-overlay">
-                        <div class="map-legend">
-                            <span><i class="fas fa-circle" style="color: #0055a5;"></i> Tramwaje</span>
-                            <span><i class="fas fa-circle" style="color: #e30613;"></i> Autobusy</span>
-                            <span><i class="fas fa-circle" style="color: #00a651;"></i> Linie nocne</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-cards">
-                <div class="info-card">
-                    <i class="fas fa-subway"></i>
-                    <div>
-                        <h4>Linie tramwajowe</h4>
-                        <p class="stats">25 linii</p>
-                    </div>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-bus"></i>
-                    <div>
-                        <h4>Linie autobusowe</h4>
-                        <p class="stats">98 linii</p>
-                    </div>
-                </div>
-                <div class="info-card">
-                    <i class="fas fa-clock"></i>
-                    <div>
-                        <h4>Linie nocne</h4>
-                        <p class="stats">16 linii</p>
-                    </div>
+                    <p>Tutaj będzie mapa Krakowa</p>
                 </div>
             </div>
         </section>
 
-        <!-- Sekcja Pojazdy -->
+        <!-- Sekcja Pojazdy - TYLKO model, marka, numer taborowy, rocznik -->
         <section id="pojazdy" class="section">
             <div class="section-header">
                 <h2><i class="fas fa-bus"></i> Tabor MPK Kraków</h2>
-                <button class="btn-add" onclick="showAddForm('vehicle')">
-                    <i class="fas fa-plus"></i> Dodaj pojazd
-                </button>
             </div>
 
             <div class="vehicles-grid" id="vehiclesGrid">
-                <!-- Przykładowe pojazdy -->
-                <div class="vehicle-card" data-id="1">
-                    <div class="vehicle-image">
+                <!-- Autobusy -->
+                <div class="vehicle-card">
+                    <div class="vehicle-icon">
                         <i class="fas fa-bus"></i>
                     </div>
-                    <div class="vehicle-info">
-                        <h3>Autobus 101</h3>
-                        <p><i class="fas fa-tag"></i> Solaris Urbino 18</p>
-                        <p><i class="fas fa-calendar"></i> Rok: 2022</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Linia: 139</p>
-                        <span class="status-badge status-trasie">W trasie</span>
+                    <div class="vehicle-details">
+                        <h3>Solaris Urbino 18</h3>
+                        <table class="vehicle-table">
+                            <tr>
+                                <td>Marka:</td>
+                                <td>Solaris</td>
+                            </tr>
+                            <tr>
+                                <td>Model:</td>
+                                <td>Urbino 18</td>
+                            </tr>
+                            <tr>
+                                <td>Numer taborowy:</td>
+                                <td><strong>#101</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Rocznik:</td>
+                                <td>2022</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
 
-                <div class="vehicle-card" data-id="2">
-                    <div class="vehicle-image">
+                <div class="vehicle-card">
+                    <div class="vehicle-icon">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <div class="vehicle-details">
+                        <h3>Mercedes Conecto</h3>
+                        <table class="vehicle-table">
+                            <tr>
+                                <td>Marka:</td>
+                                <td>Mercedes-Benz</td>
+                            </tr>
+                            <tr>
+                                <td>Model:</td>
+                                <td>Conecto</td>
+                            </tr>
+                            <tr>
+                                <td>Numer taborowy:</td>
+                                <td><strong>#107</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Rocznik:</td>
+                                <td>2021</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tramwaje -->
+                <div class="vehicle-card">
+                    <div class="vehicle-icon">
                         <i class="fas fa-tram"></i>
                     </div>
-                    <div class="vehicle-info">
-                        <h3>Tramwaj 205</h3>
-                        <p><i class="fas fa-tag"></i> Pesa Krakowiak</p>
-                        <p><i class="fas fa-calendar"></i> Rok: 2020</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Linia: 50</p>
-                        <span class="status-badge status-postoj">Na postoju</span>
+                    <div class="vehicle-details">
+                        <h3>Pesa Krakowiak</h3>
+                        <table class="vehicle-table">
+                            <tr>
+                                <td>Marka:</td>
+                                <td>Pesa</td>
+                            </tr>
+                            <tr>
+                                <td>Model:</td>
+                                <td>Krakowiak</td>
+                            </tr>
+                            <tr>
+                                <td>Numer taborowy:</td>
+                                <td><strong>#205</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Rocznik:</td>
+                                <td>2020</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
 
-                <div class="vehicle-card" data-id="3">
-                    <div class="vehicle-image">
-                        <i class="fas fa-bus"></i>
+                <div class="vehicle-card">
+                    <div class="vehicle-icon">
+                        <i class="fas fa-tram"></i>
                     </div>
-                    <div class="vehicle-info">
-                        <h3>Autobus 107</h3>
-                        <p><i class="fas fa-tag"></i> Mercedes Conecto</p>
-                        <p><i class="fas fa-calendar"></i> Rok: 2021</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Linia: 152</p>
-                        <span class="status-badge status-serbwis">Serwis</span>
+                    <div class="vehicle-details">
+                        <h3>Stadler Tango</h3>
+                        <table class="vehicle-table">
+                            <tr>
+                                <td>Marka:</td>
+                                <td>Stadler</td>
+                            </tr>
+                            <tr>
+                                <td>Model:</td>
+                                <td>Tango</td>
+                            </tr>
+                            <tr>
+                                <td>Numer taborowy:</td>
+                                <td><strong>#208</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Rocznik:</td>
+                                <td>2023</td>
+                            </tr>
+                        </table>
                     </div>
-                </div>
-            </div>
-
-            <!-- Formularz dodawania pojazdu (ukryty domyślnie) -->
-            <div id="vehicleForm" class="add-form hidden">
-                <h3><i class="fas fa-plus-circle"></i> Nowy pojazd</h3>
-                <div class="form-grid">
-                    <input type="text" id="vehicleName" placeholder="Nazwa pojazdu" value="Autobus ">
-                    <input type="text" id="vehicleModel" placeholder="Model (np. Solaris)">
-                    <input type="number" id="vehicleYear" placeholder="Rok produkcji">
-                    <input type="text" id="vehicleLine" placeholder="Linia (np. 139)">
-                    <select id="vehicleStatusSelect">
-                        <option value="W trasie">W trasie</option>
-                        <option value="Na postoju">Na postoju</option>
-                        <option value="Serwis">W serwisie</option>
-                    </select>
-                    <select id="vehicleType">
-                        <option value="bus">Autobus</option>
-                        <option value="tram">Tramwaj</option>
-                    </select>
-                </div>
-                <div class="form-actions">
-                    <button onclick="addVehicle()" class="btn-save"><i class="fas fa-save"></i> Zapisz</button>
-                    <button onclick="hideAddForm('vehicle')" class="btn-cancel"><i class="fas fa-times"></i> Anuluj</button>
                 </div>
             </div>
         </section>
 
-        <!-- Sekcja Linie -->
+        <!-- Sekcja Linie - TYLKO numery linii (bez rozkładu, bez usuwania) -->
         <section id="linie" class="section">
             <div class="section-header">
-                <h2><i class="fas fa-route"></i> Rozkład jazdy</h2>
-                <button class="btn-add" onclick="showAddForm('line')">
-                    <i class="fas fa-plus"></i> Dodaj linię
-                </button>
+                <h2><i class="fas fa-route"></i> Linie MPK Kraków</h2>
             </div>
 
-            <div class="lines-container" id="linesList">
-                <!-- Przykładowe linie -->
-                <div class="line-card" data-id="1">
-                    <div class="line-header">
-                        <span class="line-number" style="background: #0055a5;">139</span>
-                        <span class="line-type">
-                            <i class="fas fa-bus"></i> Autobus
-                        </span>
-                    </div>
-                    <div class="line-route">
-                        <i class="fas fa-arrow-right"></i>
-                        <span>Dworzec Główny - Osiedle Piastów</span>
-                    </div>
-                    <div class="line-schedule">
-                        <span><i class="fas fa-clock"></i> Co 15 min</span>
-                        <span class="line-status active">Aktywna</span>
-                    </div>
-                </div>
+            <div class="lines-grid" id="linesGrid">
+                <!-- Tramwaje (niebieskie) -->
+                <div class="line-pill" style="background: #0055a5;">1</div>
+                <div class="line-pill" style="background: #0055a5;">2</div>
+                <div class="line-pill" style="background: #0055a5;">3</div>
+                <div class="line-pill" style="background: #0055a5;">4</div>
+                <div class="line-pill" style="background: #0055a5;">5</div>
+                <div class="line-pill" style="background: #0055a5;">6</div>
+                <div class="line-pill" style="background: #0055a5;">8</div>
+                <div class="line-pill" style="background: #0055a5;">9</div>
+                <div class="line-pill" style="background: #0055a5;">10</div>
+                <div class="line-pill" style="background: #0055a5;">11</div>
+                <div class="line-pill" style="background: #0055a5;">13</div>
+                <div class="line-pill" style="background: #0055a5;">14</div>
+                <div class="line-pill" style="background: #0055a5;">16</div>
+                <div class="line-pill" style="background: #0055a5;">18</div>
+                <div class="line-pill" style="background: #0055a5;">19</div>
+                <div class="line-pill" style="background: #0055a5;">20</div>
+                <div class="line-pill" style="background: #0055a5;">21</div>
+                <div class="line-pill" style="background: #0055a5;">22</div>
+                <div class="line-pill" style="background: #0055a5;">24</div>
+                <div class="line-pill" style="background: #0055a5;">44</div>
+                <div class="line-pill" style="background: #0055a5;">49</div>
+                <div class="line-pill" style="background: #0055a5;">50</div>
+                <div class="line-pill" style="background: #0055a5;">52</div>
 
-                <div class="line-card" data-id="2">
-                    <div class="line-header">
-                        <span class="line-number" style="background: #e30613;">152</span>
-                        <span class="line-type">
-                            <i class="fas fa-bus"></i> Autobus
-                        </span>
-                    </div>
-                    <div class="line-route">
-                        <i class="fas fa-arrow-right"></i>
-                        <span>Nowy Bieżanów - Bronowice</span>
-                    </div>
-                    <div class="line-schedule">
-                        <span><i class="fas fa-clock"></i> Co 20 min</span>
-                        <span class="line-status active">Aktywna</span>
-                    </div>
-                </div>
+                <!-- Autobusy (czerwone) -->
+                <div class="line-pill" style="background: #e30613;">101</div>
+                <div class="line-pill" style="background: #e30613;">102</div>
+                <div class="line-pill" style="background: #e30613;">103</div>
+                <div class="line-pill" style="background: #e30613;">104</div>
+                <div class="line-pill" style="background: #e30613;">105</div>
+                <div class="line-pill" style="background: #e30613;">107</div>
+                <div class="line-pill" style="background: #e30613;">108</div>
+                <div class="line-pill" style="background: #e30613;">109</div>
+                <div class="line-pill" style="background: #e30613;">110</div>
+                <div class="line-pill" style="background: #e30613;">112</div>
+                <div class="line-pill" style="background: #e30613;">114</div>
+                <div class="line-pill" style="background: #e30613;">115</div>
+                <div class="line-pill" style="background: #e30613;">117</div>
+                <div class="line-pill" style="background: #e30613;">118</div>
+                <div class="line-pill" style="background: #e30613;">119</div>
+                <div class="line-pill" style="background: #e30613;">120</div>
+                <div class="line-pill" style="background: #e30613;">121</div>
+                <div class="line-pill" style="background: #e30613;">122</div>
+                <div class="line-pill" style="background: #e30613;">123</div>
+                <div class="line-pill" style="background: #e30613;">124</div>
+                <div class="line-pill" style="background: #e30613;">125</div>
+                <div class="line-pill" style="background: #e30613;">126</div>
+                <div class="line-pill" style="background: #e30613;">127</div>
+                <div class="line-pill" style="background: #e30613;">128</div>
+                <div class="line-pill" style="background: #e30613;">129</div>
+                <div class="line-pill" style="background: #e30613;">130</div>
+                <div class="line-pill" style="background: #e30613;">131</div>
+                <div class="line-pill" style="background: #e30613;">132</div>
+                <div class="line-pill" style="background: #e30613;">133</div>
+                <div class="line-pill" style="background: #e30613;">134</div>
+                <div class="line-pill" style="background: #e30613;">135</div>
+                <div class="line-pill" style="background: #e30613;">136</div>
+                <div class="line-pill" style="background: #e30613;">137</div>
+                <div class="line-pill" style="background: #e30613;">138</div>
+                <div class="line-pill" style="background: #e30613;">139</div>
+                <div class="line-pill" style="background: #e30613;">140</div>
+                <div class="line-pill" style="background: #e30613;">141</div>
+                <div class="line-pill" style="background: #e30613;">142</div>
+                <div class="line-pill" style="background: #e30613;">143</div>
+                <div class="line-pill" style="background: #e30613;">144</div>
+                <div class="line-pill" style="background: #e30613;">145</div>
+                <div class="line-pill" style="background: #e30613;">146</div>
+                <div class="line-pill" style="background: #e30613;">147</div>
+                <div class="line-pill" style="background: #e30613;">148</div>
+                <div class="line-pill" style="background: #e30613;">149</div>
+                <div class="line-pill" style="background: #e30613;">150</div>
+                <div class="line-pill" style="background: #e30613;">151</div>
+                <div class="line-pill" style="background: #e30613;">152</div>
+                <div class="line-pill" style="background: #e30613;">153</div>
+                <div class="line-pill" style="background: #e30613;">154</div>
+                <div class="line-pill" style="background: #e30613;">155</div>
+                <div class="line-pill" style="background: #e30613;">156</div>
+                <div class="line-pill" style="background: #e30613;">157</div>
+                <div class="line-pill" style="background: #e30613;">158</div>
+                <div class="line-pill" style="background: #e30613;">159</div>
+                <div class="line-pill" style="background: #e30613;">160</div>
+                <div class="line-pill" style="background: #e30613;">161</div>
+                <div class="line-pill" style="background: #e30613;">162</div>
+                <div class="line-pill" style="background: #e30613;">163</div>
+                <div class="line-pill" style="background: #e30613;">164</div>
+                <div class="line-pill" style="background: #e30613;">165</div>
+                <div class="line-pill" style="background: #e30613;">166</div>
+                <div class="line-pill" style="background: #e30613;">167</div>
+                <div class="line-pill" style="background: #e30613;">168</div>
+                <div class="line-pill" style="background: #e30613;">169</div>
+                <div class="line-pill" style="background: #e30613;">170</div>
+                <div class="line-pill" style="background: #e30613;">172</div>
+                <div class="line-pill" style="background: #e30613;">173</div>
+                <div class="line-pill" style="background: #e30613;">174</div>
+                <div class="line-pill" style="background: #e30613;">175</div>
+                <div class="line-pill" style="background: #e30613;">176</div>
+                <div class="line-pill" style="background: #e30613;">177</div>
+                <div class="line-pill" style="background: #e30613;">178</div>
+                <div class="line-pill" style="background: #e30613;">179</div>
+                <div class="line-pill" style="background: #e30613;">180</div>
+                <div class="line-pill" style="background: #e30613;">181</div>
+                <div class="line-pill" style="background: #e30613;">182</div>
+                <div class="line-pill" style="background: #e30613;">183</div>
+                <div class="line-pill" style="background: #e30613;">184</div>
+                <div class="line-pill" style="background: #e30613;">185</div>
+                <div class="line-pill" style="background: #e30613;">186</div>
+                <div class="line-pill" style="background: #e30613;">187</div>
+                <div class="line-pill" style="background: #e30613;">188</div>
+                <div class="line-pill" style="background: #e30613;">189</div>
+                <div class="line-pill" style="background: #e30613;">190</div>
+                <div class="line-pill" style="background: #e30613;">191</div>
+                <div class="line-pill" style="background: #e30613;">192</div>
+                <div class="line-pill" style="background: #e30613;">193</div>
+                <div class="line-pill" style="background: #e30613;">194</div>
+                <div class="line-pill" style="background: #e30613;">195</div>
+                <div class="line-pill" style="background: #e30613;">196</div>
+                <div class="line-pill" style="background: #e30613;">197</div>
+                <div class="line-pill" style="background: #e30613;">198</div>
+                <div class="line-pill" style="background: #e30613;">199</div>
+                <div class="line-pill" style="background: #e30613;">201</div>
+                <div class="line-pill" style="background: #e30613;">202</div>
+                <div class="line-pill" style="background: #e30613;">203</div>
+                <div class="line-pill" style="background: #e30613;">204</div>
+                <div class="line-pill" style="background: #e30613;">205</div>
+                <div class="line-pill" style="background: #e30613;">206</div>
+                <div class="line-pill" style="background: #e30613;">207</div>
+                <div class="line-pill" style="background: #e30613;">208</div>
+                <div class="line-pill" style="background: #e30613;">209</div>
+                <div class="line-pill" style="background: #e30613;">210</div>
+                <div class="line-pill" style="background: #e30613;">211</div>
+                <div class="line-pill" style="background: #e30613;">212</div>
+                <div class="line-pill" style="background: #e30613;">213</div>
+                <div class="line-pill" style="background: #e30613;">214</div>
+                <div class="line-pill" style="background: #e30613;">215</div>
+                <div class="line-pill" style="background: #e30613;">216</div>
+                <div class="line-pill" style="background: #e30613;">217</div>
+                <div class="line-pill" style="background: #e30613;">218</div>
+                <div class="line-pill" style="background: #e30613;">219</div>
+                <div class="line-pill" style="background: #e30613;">220</div>
+                <div class="line-pill" style="background: #e30613;">221</div>
+                <div class="line-pill" style="background: #e30613;">222</div>
+                <div class="line-pill" style="background: #e30613;">223</div>
+                <div class="line-pill" style="background: #e30613;">224</div>
+                <div class="line-pill" style="background: #e30613;">225</div>
+                <div class="line-pill" style="background: #e30613;">226</div>
+                <div class="line-pill" style="background: #e30613;">227</div>
+                <div class="line-pill" style="background: #e30613;">228</div>
+                <div class="line-pill" style="background: #e30613;">229</div>
+                <div class="line-pill" style="background: #e30613;">230</div>
+                <div class="line-pill" style="background: #e30613;">231</div>
+                <div class="line-pill" style="background: #e30613;">232</div>
+                <div class="line-pill" style="background: #e30613;">233</div>
+                <div class="line-pill" style="background: #e30613;">234</div>
+                <div class="line-pill" style="background: #e30613;">235</div>
+                <div class="line-pill" style="background: #e30613;">236</div>
+                <div class="line-pill" style="background: #e30613;">237</div>
+                <div class="line-pill" style="background: #e30613;">238</div>
+                <div class="line-pill" style="background: #e30613;">239</div>
+                <div class="line-pill" style="background: #e30613;">240</div>
+                <div class="line-pill" style="background: #e30613;">241</div>
+                <div class="line-pill" style="background: #e30613;">242</div>
+                <div class="line-pill" style="background: #e30613;">243</div>
+                <div class="line-pill" style="background: #e30613;">244</div>
+                <div class="line-pill" style="background: #e30613;">245</div>
+                <div class="line-pill" style="background: #e30613;">246</div>
+                <div class="line-pill" style="background: #e30613;">247</div>
+                <div class="line-pill" style="background: #e30613;">248</div>
+                <div class="line-pill" style="background: #e30613;">249</div>
+                <div class="line-pill" style="background: #e30613;">250</div>
+                <div class="line-pill" style="background: #e30613;">251</div>
+                <div class="line-pill" style="background: #e30613;">252</div>
+                <div class="line-pill" style="background: #e30613;">253</div>
+                <div class="line-pill" style="background: #e30613;">254</div>
+                <div class="line-pill" style="background: #e30613;">255</div>
+                <div class="line-pill" style="background: #e30613;">256</div>
+                <div class="line-pill" style="background: #e30613;">257</div>
+                <div class="line-pill" style="background: #e30613;">258</div>
+                <div class="line-pill" style="background: #e30613;">259</div>
+                <div class="line-pill" style="background: #e30613;">260</div>
+                <div class="line-pill" style="background: #e30613;">261</div>
+                <div class="line-pill" style="background: #e30613;">262</div>
+                <div class="line-pill" style="background: #e30613;">263</div>
+                <div class="line-pill" style="background: #e30613;">264</div>
+                <div class="line-pill" style="background: #e30613;">265</div>
+                <div class="line-pill" style="background: #e30613;">266</div>
+                <div class="line-pill" style="background: #e30613;">267</div>
+                <div class="line-pill" style="background: #e30613;">268</div>
+                <div class="line-pill" style="background: #e30613;">269</div>
+                <div class="line-pill" style="background: #e30613;">270</div>
+                <div class="line-pill" style="background: #e30613;">271</div>
+                <div class="line-pill" style="background: #e30613;">272</div>
+                <div class="line-pill" style="background: #e30613;">273</div>
+                <div class="line-pill" style="background: #e30613;">274</div>
+                <div class="line-pill" style="background: #e30613;">275</div>
+                <div class="line-pill" style="background: #e30613;">276</div>
+                <div class="line-pill" style="background: #e30613;">277</div>
+                <div class="line-pill" style="background: #e30613;">278</div>
+                <div class="line-pill" style="background: #e30613;">279</div>
+                <div class="line-pill" style="background: #e30613;">280</div>
+                <div class="line-pill" style="background: #e30613;">281</div>
+                <div class="line-pill" style="background: #e30613;">282</div>
+                <div class="line-pill" style="background: #e30613;">283</div>
+                <div class="line-pill" style="background: #e30613;">284</div>
+                <div class="line-pill" style="background: #e30613;">285</div>
+                <div class="line-pill" style="background: #e30613;">286</div>
+                <div class="line-pill" style="background: #e30613;">287</div>
+                <div class="line-pill" style="background: #e30613;">288</div>
+                <div class="line-pill" style="background: #e30613;">289</div>
+                <div class="line-pill" style="background: #e30613;">290</div>
+                <div class="line-pill" style="background: #e30613;">291</div>
+                <div class="line-pill" style="background: #e30613;">292</div>
+                <div class="line-pill" style="background: #e30613;">293</div>
+                <div class="line-pill" style="background: #e30613;">294</div>
+                <div class="line-pill" style="background: #e30613;">295</div>
+                <div class="line-pill" style="background: #e30613;">296</div>
+                <div class="line-pill" style="background: #e30613;">297</div>
+                <div class="line-pill" style="background: #e30613;">298</div>
+                <div class="line-pill" style="background: #e30613;">299</div>
+                <div class="line-pill" style="background: #e30613;">301</div>
+                <div class="line-pill" style="background: #e30613;">304</div>
+                <div class="line-pill" style="background: #e30613;">308</div>
+                <div class="line-pill" style="background: #e30613;">501</div>
+                <div class="line-pill" style="background: #e30613;">502</div>
+                <div class="line-pill" style="background: #e30613;">503</div>
+                <div class="line-pill" style="background: #e30613;">504</div>
+                <div class="line-pill" style="background: #e30613;">507</div>
+                <div class="line-pill" style="background: #e30613;">511</div>
+                <div class="line-pill" style="background: #e30613;">512</div>
+                <div class="line-pill" style="background: #e30613;">522</div>
+                <div class="line-pill" style="background: #e30613;">572</div>
+                <div class="line-pill" style="background: #e30613;">602</div>
+                <div class="line-pill" style="background: #e30613;">608</div>
+                <div class="line-pill" style="background: #e30613;">610</div>
+                <div class="line-pill" style="background: #e30613;">662</div>
+                <div class="line-pill" style="background: #e30613;">669</div>
+                <div class="line-pill" style="background: #e30613;">904</div>
+                <div class="line-pill" style="background: #e30613;">942</div>
+                <div class="line-pill" style="background: #e30613;">976</div>
+                <div class="line-pill" style="background: #e30613;">979</div>
 
-                <div class="line-card" data-id="3">
-                    <div class="line-header">
-                        <span class="line-number" style="background: #00a651;">50</span>
-                        <span class="line-type">
-                            <i class="fas fa-tram"></i> Tramwaj
-                        </span>
-                    </div>
-                    <div class="line-route">
-                        <i class="fas fa-arrow-right"></i>
-                        <span>Mały Płaszów - Krowodrza</span>
-                    </div>
-                    <div class="line-schedule">
-                        <span><i class="fas fa-clock"></i> Co 10 min</span>
-                        <span class="line-status active">Aktywna</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Formularz dodawania linii (ukryty domyślnie) -->
-            <div id="lineForm" class="add-form hidden">
-                <h3><i class="fas fa-plus-circle"></i> Nowa linia</h3>
-                <div class="form-grid">
-                    <input type="text" id="lineNumber" placeholder="Numer linii">
-                    <select id="lineType">
-                        <option value="bus">Autobus</option>
-                        <option value="tram">Tramwaj</option>
-                    </select>
-                    <input type="text" id="lineRoute" placeholder="Trasa (np. Dworzec - Osiedle)">
-                    <input type="text" id="lineFrequency" placeholder="Częstotliwość (np. co 15 min)">
-                </div>
-                <div class="form-actions">
-                    <button onclick="addLine()" class="btn-save"><i class="fas fa-save"></i> Zapisz</button>
-                    <button onclick="hideAddForm('line')" class="btn-cancel"><i class="fas fa-times"></i> Anuluj</button>
-                </div>
+                <!-- Linie nocne (zielone) -->
+                <div class="line-pill" style="background: #00a651;">601</div>
+                <div class="line-pill" style="background: #00a651;">602</div>
+                <div class="line-pill" style="background: #00a651;">603</div>
+                <div class="line-pill" style="background: #00a651;">604</div>
+                <div class="line-pill" style="background: #00a651;">605</div>
+                <div class="line-pill" style="background: #00a651;">606</div>
+                <div class="line-pill" style="background: #00a651;">607</div>
+                <div class="line-pill" style="background: #00a651;">608</div>
+                <div class="line-pill" style="background: #00a651;">609</div>
+                <div class="line-pill" style="background: #00a651;">610</div>
+                <div class="line-pill" style="background: #00a651;">611</div>
+                <div class="line-pill" style="background: #00a651;">612</div>
+                <div class="line-pill" style="background: #00a651;">613</div>
+                <div class="line-pill" style="background: #00a651;">614</div>
+                <div class="line-pill" style="background: #00a651;">615</div>
+                <div class="line-pill" style="background: #00a651;">616</div>
+                <div class="line-pill" style="background: #00a651;">617</div>
+                <div class="line-pill" style="background: #00a651;">618</div>
+                <div class="line-pill" style="background: #00a651;">619</div>
+                <div class="line-pill" style="background: #00a651;">620</div>
             </div>
         </section>
     </main>
